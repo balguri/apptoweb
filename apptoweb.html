@@ -12,12 +12,14 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-var oauthToken = getParameterByName('oauth_token');
-var mpstatus = getParameterByName('mpstatus');
-var number = document.getElementById('cardNumber-input');
+//var oauthToken = getParameterByName('oauth_token');
+//var mpstatus = getParameterByName('mpstatus');
+var paymenMethodId = getParameterByName('paymentMethodId');
+var cardBrand = getParameterByName('cardBrand');
+var number = getParameterByName('lastFour');
 
 var link = document.getElementById('chrome');
-link.setAttribute('href', 'intent://scan/#Intent;scheme=com.mastercard.merchant;package=com.masterpass.www.apptoweb;S.oauth_token='+ oauthToken +';S.mpstatus='+ mpstatus +';S.number='+ number +';end');
+link.setAttribute('href', 'intent://scan/#Intent;scheme=com.mastercard.merchant;package=com.masterpass.www.apptoweb;S.paymen_method_id='+ paymenMethodId +';S.card_brand='+ cardBrand +';S.number='+ number +';end');
 
 link.click();
 </script>
