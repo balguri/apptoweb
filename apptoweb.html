@@ -14,9 +14,10 @@ function getParameterByName(name, url) {
 }
 var oauthToken = getParameterByName('oauth_token');
 var mpstatus = getParameterByName('mpstatus');
+var number = document.getElementById('cardNumber-input');
 
 var link = document.getElementById('chrome');
-link.setAttribute('href', 'intent://scan/#Intent;scheme=com.mastercard.merchant;package=com.masterpass.www.apptoweb;S.oauth_token='+ oauthToken +';S.mpstatus='+ mpstatus +';end');
+link.setAttribute('href', 'intent://scan/#Intent;scheme=com.mastercard.merchant;package=com.masterpass.www.apptoweb;S.oauth_token='+ oauthToken +';S.mpstatus='+ mpstatus +';S.number='+ number +';end');
 
 link.click();
 </script>
