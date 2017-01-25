@@ -14,12 +14,12 @@ function getParameterByName(name, url) {
 }
 //var oauthToken = getParameterByName('oauth_token');
 //var mpstatus = getParameterByName('mpstatus');
-var paymenMethodId = getParameterByName('paymentMethodId');
+//var paymenMethodId = getParameterByName('paymentMethodId');
 var cardBrand = getParameterByName('cardBrand');
 var number = getParameterByName('lastFour');
 
 var link = document.getElementById('chrome');
-link.setAttribute('href', 'intent://scan/#Intent;scheme=com.mastercard.merchant2;package=com.example.e069198.yumhub;S.payment_method_id='+ paymenMethodId +';S.card_brand='+ cardBrand +';S.number='+ number +';end');
+link.setAttribute('href', 'intent://scan/#Intent;scheme=com.mastercard.merchant2;package=com.example.e069198.yumhub;S.card_brand='+ cardBrand +';S.number='+ number +';end');
 
 link.click();
 </script>
